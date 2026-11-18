@@ -1,5 +1,5 @@
 [build]
-  command = "npm --prefix frontend run demo:build"
+  command = "npm --prefix frontend ci && npm --prefix frontend run demo:build"
   publish = "frontend/dist"
 
 [[redirects]]
