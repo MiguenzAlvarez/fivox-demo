@@ -1,0 +1,20 @@
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { ForgotPasswordPage } from './pages/ForgotPasswordPage';
+import { HomePage } from './pages/HomePage';
+import { LoginPage } from './pages/LoginPage';
+import { RegisterPage } from './pages/RegisterPage';
+import { DemoModeNotice } from './demo/DemoModeNotice';
+
+export function App() {
+  return (
+    <><DemoModeNotice /><Routes>
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/home-react" element={<Navigate to="/home" replace />} />
+      <Route path="*" element={<Navigate to="/login" replace />} />
+    </Routes></>
+  );
+}
